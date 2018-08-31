@@ -3,3 +3,55 @@
  * <!--[if IE]>
  *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
  * <![endif]--> */
+ @import "compass";
+ @import "compass/reset";
+ @import "breakpoint";
+ @import "compass/css3/transform";
+ @import "compass/css3/box-shadow";
+ @import "compass/css3/filter";
+ 
+ $pc1366: max-width 1367px;
+ $pc1280: max-width 1300px; 
+ $ipad: max-width 1025px;
+ $iphone: max-width 680px; 
+ 
+ @mixin center($top,$left) {
+     position: relative;
+     top: $top;
+     left: $left;
+     @include transform(translateX(-$left) translateY(-$top));
+ }
+ a {
+     text-decoration: none;
+     color: #000;
+     transition: all 0.3s;
+     &:hover {
+         color: #1ea0c3;
+     }
+ }
+ img {
+     border: 0;
+     display: inline-block;
+ }
+ body{
+     font-family:'Microsoft JhengHei;';
+     margin:0;
+     padding:0;
+     background-attachment:fixed;
+     overflow-x:hidden;
+ }
+ button,input {
+     outline:none;
+     align-items: flex-start;
+     text-align: center;
+     cursor: pointer;
+     color: rgba(255, 255, 255, 0);
+     background-color: rgba(255, 255, 255, 0);
+     box-sizing: initial;
+     padding: 0;
+     border-width: 0px;
+     border-style: none;
+     font-size: 2.5rem;
+     border-radius: 0;
+     -webkit-appearance: none;
+ }
