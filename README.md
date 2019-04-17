@@ -1,3 +1,4 @@
->> cd this_file<br>
->> npm install<br>
->> gulp
+git clone  
+cd #ProjectsName
+npm install
+gulp
