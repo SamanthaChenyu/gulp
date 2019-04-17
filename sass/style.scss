@@ -39,6 +39,7 @@
      padding:0;
      background-attachment:fixed;
      overflow-x:hidden;
+     filter: blur(5px);
  }
  button,input {
      outline:none;

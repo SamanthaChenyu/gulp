@@ -20,6 +20,8 @@
     "gulp-webserver": "^0.9.1"
   },
   "dependencies": {
+    "autoprefixer": "^9.5.1",
+    "gulp-postcss": "^8.0.0",
     "gulp-ruby-sass": "^3.0.0",
     "gulp-sourcemaps": "^2.6.4",
     "sass-breakpoints": "^2.1.0"

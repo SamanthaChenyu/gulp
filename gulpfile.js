@@ -8,6 +8,9 @@ var concat = require('gulp-concat');
 var browserSync = require('browser-sync').create();
 var sourcemaps = require('gulp-sourcemaps');
 var sass = require('gulp-ruby-sass');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
+
 
 // gulp.task('style', function() {
 //    return gulp.src('src/css/*.css')    //所有要壓縮的 .css 檔案
@@ -53,6 +56,9 @@ gulp.task('watch', function() {
 });
 
 gulp.task('compass',function(){
+  var processors = [                                 // 定義 postCSS 所需要的元件
+    autoprefixer({browsers: ['last 5 version']})   // 使用 autoprefixer，這邊定義最新的五個版本瀏覽器
+  ];
     return gulp.src('./sass/*.scss')
         .pipe(compass({
             sourcemap: true,
@@ -62,8 +68,21 @@ gulp.task('compass',function(){
       sass: './sass/',
       style: 'compact' //nested, expanded, compact, compressed
         }))
+        .pipe(postcss(processors))                       // 將 PostCSS 插入流程
         .pipe(gulp.dest('./dist/css/'));
 });
+
+// gulp.task('autoprefixer', function() {
+//      return gulp.src('./postcss/*.css') 
+//           .pipe(postcss([ 
+//               autoprefixer({ browsers: ['last 2 versions'] })
+//            ]))
+//            .pipe(gulp.dest('./dist/postcss'));
+// });
+
+
+
+
 
 gulp.task('default', 
   ['watch','compass','browsersync','html','script', 'image']

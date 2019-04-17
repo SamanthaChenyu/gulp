@@ -1,5 +1,3 @@
->> CopyNewProject<br>
->> rename<br><br>
->> cd new project<br>
+>> cd this_file<br>
 >> npm install<br>
 >> gulp
