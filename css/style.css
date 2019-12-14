@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Welcome to Compass. Use this file to write IE specific override styles. Import this file using the following HTML or equivalent: <!--[if IE]> <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" /> <![endif]--> */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; }
 
@@ -21,12 +22,38 @@ a:hover { color: #1ea0c3; }
 
 img { border: 0; display: inline-block; }
 
-body { font-family: "Microsoft JhengHei;"; margin: 0; padding: 0; background-attachment: fixed; overflow-x: hidden; filter: blur(5px); }
+body { font-family: "Microsoft JhengHei;"; margin: 0; padding: 0; background-attachment: fixed; overflow-x: hidden; }
 
 button, input { outline: none; align-items: flex-start; text-align: center; cursor: pointer; color: rgba(255, 255, 255, 0); background-color: rgba(255, 255, 255, 0); box-sizing: initial; padding: 0; border-width: 0px; border-style: none; font-size: 2.5rem; border-radius: 0; -webkit-appearance: none; }
 
-#loading { background-image: url("../images/landscape.png"); background-repeat: no-repeat; width: 100%; height: 100vh; background-size: cover; background-position: top right; position: relative; }
+#loading { background-image: url("../images/landscape.png"); background-repeat: no-repeat; width: 100%; height: 100vh; background-size: cover; background-position: top right; position: absolute; top: 0; left: 0; z-index: 99999999; }
 #loading::after { content: " "; position: absolute; opacity: 0.5; top: 0; left: 0; width: 100%; height: 100vh; background: linear-gradient(to right, #7e79db, #83b4dd); }
 #loading .logo { position: absolute; width: 120px; height: 120px; z-index: 999; left: 50%; top: 40%; transform: translateX(-50%) translateY(-40%); }
+
+.middle { width: 300px; margin-left: auto; margin-right: auto; position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%); }
+
+.loginInformation { margin: 2%; text-align: center; overflow-x: hidden; }
+.loginInformation .tittle { width: 180px; }
+
+.formBOx { padding-top: 50px; }
+.formBOx .Error input { border-bottom: 2px solid #ff7e8d; }
+.formBOx .Error span.error_message:after { content: "密碼錯誤，請再試一次"; background-color: #ff7e8d; color: #fff; font-size: 12px; height: auto; padding: 15px; position: absolute; font-weight: 100; box-shadow: 1px 3px 5px #acacac; border-radius: 1px; bottom: -50px; width: 150px; left: 0px; }
+.formBOx .Error span.error_message:before { content: " "; width: 0; height: 0; border-style: solid; border-width: 0 10px 10px 10px; border-color: transparent transparent #ff7e8d transparent; position: absolute; bottom: -10px; left: 22px; }
+.formBOx input { border-left: 0px; border-right: 0px; border-top: 0px; border-bottom: 1px solid #acacac; padding: 0px 0px 0px 50px; width: 100%; font-size: 15px; height: 49px; color: #acacac; text-align: left; margin: 8px 0px; }
+.formBOx input:focus { border-left: 0px; border-right: 0px; border-top: 0px; border-bottom: 2px solid; border-image: linear-gradient(to right, #35b7fc, #b992f9) 10 10; outline: none; color: #000; }
+.formBOx input.login { margin-top: 80px; height: 56px; outline: none; align-items: flex-start; text-align: center; cursor: pointer; color: #fff; background: linear-gradient(to right, #b992f9, #35b7fc); box-sizing: border-box; font-size: 17px; padding: 0; border-radius: 4px; font-weight: bold; -webkit-appearance: none; }
+@media (max-width: 767px) { .formBOx input.login { height: 45px; } }
+.formBOx input.login:hover { border-width: 2px; border-style: solid; border-color: #35b7fc; border-image: 0; background: #fff; transition: 0.3s all; color: #35b7fc; }
+.formBOx .user, .formBOx .password { text-align: left; margin-bottom: 16px; }
+.formBOx .inputBox { position: relative; }
+.formBOx .inputBox span.representative { position: absolute; top: 50%; transform: translateY(-50%); left: 0px; padding-right: 10px; border-right: 1px solid #acacac; }
+.formBOx .inputBox span.confirm { position: absolute; top: 50%; transform: translateY(-50%); right: 15px; }
+
+.header_bar { background-color: #525077; display: flex; flex-direction: row; justify-content: center; align-items: center; height: 56px; box-shadow: 0px 3px 5px #b5b5b5; }
+.header_bar .white_logo { position: absolute; left: 0; height: 56px; width: 65px; text-align: center; display: flex; align-items: center; justify-content: center; }
+.header_bar .white_logo img { width: 33px; height: auto; }
+.header_bar .current_state { color: rgba(255, 255, 255, 0.7); font-size: 19px; }
+.header_bar .user_information { position: absolute; right: 15px; display: flex; flex-direction: row; align-items: center; justify-content: space-between; }
+.header_bar .user_information span.user_icon { width: 33px; height: 33px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -12,14 +12,34 @@
 
 $pc1366: max-width 1367px;
 $pc1280: max-width 1300px;
+$pc1260: max-width 1260px;
 $ipad: max-width 1025px;
-$iphone: max-width 680px;
+$iphone: max-width 767px;
 
-@mixin center($top, $left) {
+@mixin abcenter($top, $left) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  @include transform(translateX(-$left) translateY(-$top));
+}
+
+@mixin recenter($top, $left) {
   position: relative;
   top: $top;
   left: $left;
   @include transform(translateX(-$left) translateY(-$top));
+}
+
+@mixin Xcenter($left) {
+  position: relative;
+  left: $left;
+  @include transform(translateX(-$left));
+}
+
+@mixin Ycenter($top) {
+  position: relative;
+  top: $top;
+  @include transform(translateY(-$top));
 }
 
 a {
@@ -43,7 +63,6 @@ body {
   padding: 0;
   background-attachment: fixed;
   overflow-x: hidden;
-  filter: blur(5px);
 }
 
 button,
@@ -70,7 +89,10 @@ input {
   height: 100vh;
   background-size: cover;
   background-position: top right;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99999999;
   &::after {
     content: " ";
     position: absolute;
@@ -89,5 +111,191 @@ input {
     left: 50%;
     top: 40%;
     transform: translateX(-50%) translateY(-40%);
+  }
+}
+
+.middle {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.loginInformation {
+  margin: 2%;
+  text-align: center;
+  overflow-x: hidden;
+
+  .tittle {
+    width: 180px;
+  }
+}
+
+.formBOx {
+  padding-top: 50px;
+
+  .Error {
+    input {
+      border-bottom: 2px solid #ff7e8d;
+    }
+
+    span.error_message {
+      &:after {
+        content: "密碼錯誤，請再試一次";
+        background-color: #ff7e8d;
+        color: #fff;
+        font-size: 12px;
+        height: auto;
+        padding: 15px;
+        position: absolute;
+        font-weight: 100;
+        box-shadow: 1px 3px 5px #acacac;
+        border-radius: 1px;
+        bottom: -50px;
+        width: 150px;
+        left: 0px;
+      }
+
+      &:before {
+        content: " ";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 10px 10px 10px;
+        border-color: transparent transparent #ff7e8d transparent;
+        position: absolute;
+        bottom: -10px;
+        left: 22px;
+      }
+    }
+  }
+
+  input {
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-bottom: 1px solid #acacac;
+    padding: 0px 0px 0px 50px;
+    width: 100%;
+    font-size: 15px;
+    height: 49px;
+    color: #acacac;
+    text-align: left;
+    margin: 8px 0px;
+
+    &:focus {
+      border-left: 0px;
+      border-right: 0px;
+      border-top: 0px;
+      border-bottom: 2px solid;
+      border-image: linear-gradient(to right, #35b7fc, #b992f9) 10 10;
+      outline: none;
+      color: #000;
+    }
+
+    &.login {
+      margin-top: 80px;
+      height: 56px;
+      outline: none;
+      align-items: flex-start;
+      text-align: center;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(to right, #b992f9, #35b7fc);
+      box-sizing: border-box;
+      font-size: 17px;
+      padding: 0;
+      border-radius: 4px;
+      font-weight: bold;
+      -webkit-appearance: none;
+
+      @include breakpoint($iphone) {
+        height: 45px;
+      }
+
+      &:hover {
+        border-width: 2px;
+        border-style: solid;
+        border-color: #35b7fc;
+        border-image: 0;
+        background: #fff;
+        transition: 0.3s all;
+        color: #35b7fc;
+      }
+    }
+  }
+
+  .user,
+  .password {
+    text-align: left;
+    margin-bottom: 16px;
+  }
+
+  .inputBox {
+    position: relative;
+
+    span.representative {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0px;
+      padding-right: 10px;
+      border-right: 1px solid #acacac;
+    }
+
+    span.confirm {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 15px;
+    }
+  }
+}
+// notion
+.header_bar {
+  background-color: #525077;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 56px;
+  box-shadow: 0px 3px 5px #b5b5b5;
+
+  .white_logo {
+    position: absolute;
+    left: 0;
+    height: 56px;
+    width: 65px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 33px;
+      height: auto;
+    }
+  }
+
+  .current_state {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 19px;
+  }
+
+  .user_information {
+    position: absolute;
+    right: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    span.user_icon {
+      width: 33px;
+      height: 33px;
+    }
   }
 }
