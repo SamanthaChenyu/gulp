@@ -63,6 +63,7 @@ body {
     margin: 0;
     padding: 0;
     background-attachment: fixed;
+    background-color: #F0F1F5;
     overflow-x: hidden;
 }
 
@@ -285,7 +286,7 @@ input {
     }
 
     .current_state {
-        color: rgba(255, 255, 255, 0.7);
+        color: rgba(255, 255, 255, 1);
         font-size: 17px;
     }
 
@@ -309,7 +310,7 @@ input {
 }
 
 .navigation {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     display: flex;
     flex-direction: row;
@@ -319,6 +320,7 @@ input {
     width: 100%;
     box-shadow: 0px 3px 10px 0px;
     z-index: 999;
+    background: #ffffff;
 
     &::before {
         content: "|";
@@ -375,5 +377,109 @@ input {
                 padding-top: 5px;
             }
         }
+    }
+}
+
+.mapBox {
+    width: 95%;
+    margin: 10px auto 60px auto;
+    box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #fff;
+    padding: 10px 0px;
+
+    .map {
+        width: 95%;
+        margin: auto;
+        padding: 10px 0px;
+    }
+
+    .detail {
+        width: 95%;
+        margin: 0px auto 0px auto;
+        border: 1px solid #DBDFE5;
+        font-size: 15px;
+
+        p:nth-last-child(1) {
+            border-bottom: 0px solid #DBDFE5;
+        }
+
+        p,
+        .distance {
+            font-weight: bold;
+            color: #464453;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            margin: 0px 15px;
+            border-bottom: 1px solid #DBDFE5;
+            white-space: nowrap;
+
+            span {
+                color: #7C80AA;
+                padding-left: 15px;
+                font-weight: 400;
+            }
+        }
+
+        .distance {
+            ul {
+                padding-left: 15px;
+                color: #7C80AA;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+.collapse {
+    margin: 20px 0px;
+}
+
+.historyBox {
+    margin-bottom: 12px;
+}
+
+
+.togglefaq {
+    box-shadow: 0px 0px 5px 2px #dcdcdc;
+    position: relative;
+    height: 56px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    transition: .35s all;
+    color: #525077;
+
+    &:hover {
+        background-color: #7C80AA;
+        color: #fff;
+    }
+
+    p.date {
+        font-size: 15px;
+        font-weight: bold;
+        margin: 0px 60px 0px 30px;
+    }
+
+    p.location {
+        font-size: 15px;
+    }
+}
+
+.history-container {
+    width: 90%;
+    margin: 0px auto 70px auto;
+}
+
+.reminder {
+    position: relative;
+
+    &::after {
+        content: " ";
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: #35B7FC;
     }
 }
