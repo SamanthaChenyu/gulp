@@ -23,7 +23,7 @@ a:hover { color: #1ea0c3; }
 
 img { border: 0; display: inline-block; }
 
-body { font-family: "Microsoft JhengHei;"; margin: 0; padding: 0; background-attachment: fixed; background-color: #F0F1F5; overflow-x: hidden; }
+body { font-family: "Microsoft JhengHei;"; margin: 0; padding: 0; background-attachment: fixed; background-color: #f0f1f5; overflow-x: hidden; }
 
 button, input { outline: none; align-items: flex-start; text-align: center; cursor: pointer; color: rgba(255, 255, 255, 0); background-color: rgba(255, 255, 255, 0); box-sizing: initial; padding: 0; border-width: 0px; border-style: none; font-size: 2.5rem; border-radius: 0; -webkit-appearance: none; }
 
@@ -55,42 +55,50 @@ button, input { outline: none; align-items: flex-start; text-align: center; curs
 .header_bar .white_logo img { width: 33px; height: auto; }
 .header_bar .current_state { color: white; font-size: 17px; }
 .header_bar .user_information { position: absolute; right: 15px; display: flex; flex-direction: row; align-items: center; justify-content: space-between; }
-.header_bar .user_information a { color: #35B7FC; }
+.header_bar .user_information a, .header_bar .user_information .fa-location-arrow { color: #35b7fc; }
 .header_bar .user_information span.user_icon { width: 33px; height: 33px; }
 
 .navigation { position: fixed; bottom: 0; display: flex; flex-direction: row; align-items: center; justify-content: space-around; height: 50px; width: 100%; box-shadow: 0px 3px 10px 0px; z-index: 999; background: #ffffff; }
-.navigation::before { content: "|"; position: absolute; color: #DBDFE5; }
-.navigation .twenty-eight { font-size: 28px; color: #ACACAC; }
-.navigation .twenty-eight:hover { color: #35B7FC; }
-.navigation .twenty-six { font-size: 26px; color: #ACACAC; }
-.navigation .twenty-six:hover { color: #35B7FC; }
+.navigation::before { content: "|"; position: absolute; color: #dbdfe5; }
+.navigation .here { color: #35b7fc !important; }
+.navigation .twenty-eight { font-size: 28px; color: #acacac; }
+.navigation .twenty-eight:hover { color: #35b7fc; }
+.navigation .twenty-six { font-size: 26px; color: #acacac; }
+.navigation .twenty-six:hover { color: #35b7fc; }
+.navigation .camera { position: absolute; width: 50px; height: 50px; border-radius: 50%; background-color: #35b7fc; color: #ffffff; bottom: 25px; box-shadow: 0px 2px 10px rgba(128, 128, 128, 0.5); }
+.navigation .camera .fa-2x { position: absolute; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%); font-size: 26px; }
 
 .notification i, .notification span, .notification p { color: #525077; font-size: 15px; }
-.notification li:nth-child(odd) { background-color: #DFF3FD; }
+.notification li:nth-child(odd) { background-color: #dff3fd; }
 .notification li { height: 86px; }
 .notification li .notification_inner { width: 250px; margin: auto; padding: 27px 0px; }
-.notification li .notification_inner p { font-size: 12px; color: #ACACAC; padding-left: 20px; padding-top: 5px; }
+.notification li .notification_inner p { font-size: 12px; color: #acacac; padding-left: 20px; padding-top: 5px; }
 
 .mapBox { width: 95%; margin: 10px auto 60px auto; box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); background-color: #fff; padding: 10px 0px; }
 .mapBox .map { width: 95%; margin: auto; padding: 10px 0px; }
-.mapBox .detail { width: 95%; margin: 0px auto 0px auto; border: 1px solid #DBDFE5; font-size: 15px; }
-.mapBox .detail p:nth-last-child(1) { border-bottom: 0px solid #DBDFE5; }
-.mapBox .detail p, .mapBox .detail .distance { font-weight: bold; color: #464453; height: 50px; display: flex; align-items: center; margin: 0px 15px; border-bottom: 1px solid #DBDFE5; white-space: nowrap; }
-.mapBox .detail p span, .mapBox .detail .distance span { color: #7C80AA; padding-left: 15px; font-weight: 400; }
-.mapBox .detail .distance ul { padding-left: 15px; color: #7C80AA; font-weight: 400; }
+.mapBox .detail { width: 95%; margin: 0px auto 0px auto; border: 1px solid #dbdfe5; font-size: 15px; }
+.mapBox .detail p.title { font-weight: bold; color: #464453; height: 50px; display: flex; align-items: center; margin: 0px 15px; border-bottom: 0px solid #dbdfe5; white-space: nowrap; }
+.mapBox .detail p:nth-last-child(1) { border-bottom: 0px solid #dbdfe5; }
+.mapBox .detail p, .mapBox .detail .distance { font-weight: bold; color: #464453; height: 50px; display: flex; align-items: center; margin: 0px 15px; border-bottom: 1px solid #dbdfe5; white-space: nowrap; }
+.mapBox .detail p span, .mapBox .detail .distance span { color: #7c80aa; padding-left: 15px; font-weight: 400; }
+.mapBox .detail .distance ul { padding-left: 15px; color: #7c80aa; font-weight: 400; }
 
 .collapse { margin: 20px 0px; }
 
 .historyBox { margin-bottom: 12px; }
 
-.togglefaq { box-shadow: 0px 0px 5px 2px #dcdcdc; position: relative; height: 56px; background-color: #fff; display: flex; align-items: center; transition: .35s all; color: #525077; }
-.togglefaq:hover { background-color: #7C80AA; color: #fff; }
+.togglefaq { box-shadow: 0px 0px 5px 2px #dcdcdc; position: relative; height: 56px; background-color: #fff; display: flex; align-items: center; transition: 0.35s all; color: #525077; }
+.togglefaq:hover { background-color: #7c80aa; color: #fff; }
 .togglefaq p.date { font-size: 15px; font-weight: bold; margin: 0px 60px 0px 30px; }
 .togglefaq p.location { font-size: 15px; }
 
 .history-container { width: 90%; margin: 0px auto 70px auto; }
 
 .reminder { position: relative; }
-.reminder::after { content: " "; position: absolute; width: 5px; height: 5px; border-radius: 50%; background-color: #35B7FC; }
+.reminder::after { content: " "; position: absolute; width: 5px; height: 5px; border-radius: 50%; background-color: #35b7fc; }
+
+.inDetail { display: flex; }
+.inDetail p.textareaTitle { width: 20%; font-weight: bold; color: #464453; height: 50px; display: flex; align-items: center; margin: 0px 15px; border-bottom: 0px solid #dbdfe5; white-space: nowrap; }
+.inDetail textarea { width: 80%; margin: 15px; height: 90px; font-size: 15px; border: 1px solid #dbdfe5; overflow-y: scroll; }
 
 /*# sourceMappingURL=style.css.map */
