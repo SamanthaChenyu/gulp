@@ -529,3 +529,19 @@ input {
     overflow-y: scroll;
   }
 }
+.photo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  .picture {
+    position: relative;
+    width: 45%;
+    padding-bottom: 5px;
+    .close {
+      position: absolute;
+      right: -5px;
+      top: -5px;
+    }
+  }
+}
